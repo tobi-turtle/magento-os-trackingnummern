@@ -1,3 +1,4 @@
+import "dotenv/config";
 export default async function (qtyObject) {
     try {
         const url =
@@ -6,7 +7,7 @@ export default async function (qtyObject) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer fyc5i5n9t7odji8k7zv52xokx6gabq2m",
+                Authorization: process.env.MAGENTO_API_KEY,
             },
             body: JSON.stringify(qtyObject),
         });
