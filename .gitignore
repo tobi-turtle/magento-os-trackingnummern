@@ -1,2 +1,4 @@
 node_modules
-*.json
+orders.json
+shipments.json
+tracking.json
