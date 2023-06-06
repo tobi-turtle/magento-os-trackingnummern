@@ -9,7 +9,7 @@ if (date.getMonth() == month) date.setDate(0);
 date.setHours(0, 0, 0, 0);
 //format date to YYYY-MM-DD
 const formatYmd = (date) => date.toISOString().slice(0, 10);
-const urlDate = "2023-06-06"; //"2023-06-06"; // formatYmd(date);
+const urlDate = formatYmd(date); //"2023-06-06"; // formatYmd(date);
 
 export default async function () {
     const url = `https://www.online-surfshop.de/rest/default/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=created_at&searchCriteria[filter_groups][0][filters][0][value]=${urlDate}&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`;
