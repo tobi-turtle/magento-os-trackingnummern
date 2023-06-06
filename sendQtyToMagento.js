@@ -1,8 +1,7 @@
 import "dotenv/config";
 export default async function (qtyObject) {
     try {
-        const url =
-            "https://www.online-surfshop.de/rest/default/V1/inventory/source-items";
+        const url = `${process.env.MAGENTO_SHOP_URL}/rest/default/V1/inventory/source-items`;
         const response = await fetch(url, {
             method: "POST",
             headers: {
