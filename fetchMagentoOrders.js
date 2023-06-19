@@ -3,6 +3,7 @@ import "dotenv/config";
 const date = new Date();
 const month = date.getMonth();
 date.setMonth(date.getMonth() - 1);
+import fs from "fs/promises";
 
 // If still in same month, set date to last day of previous month
 if (date.getMonth() == month) date.setDate(0);
@@ -24,7 +25,7 @@ export default async function () {
         });
 
         const data = await response.json();
-        //await fs.writeFile("orders.json", JSON.stringify(data.items));
+        await fs.writeFile("orders.json", JSON.stringify(data.items));
         console.log("Finished fetchMagentoOrders - Total ", data.items.length);
         return data.items;
     } catch (err) {
