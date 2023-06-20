@@ -2,7 +2,7 @@ import fetchMagentoOrders from "./fetchMagentoOrders.js";
 import createShipments from "./createShipments.js";
 import createTracking from "./createTracking.js";
 
-// Process Flow of the script
+// process
 // 1. fetchMagentoOrders
 // 2. createShipments
 // 2a. fetchTracking

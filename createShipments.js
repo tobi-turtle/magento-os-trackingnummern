@@ -8,7 +8,7 @@ export default async function (data) {
         for (const order of data) {
             const items = createItems(order.items);
             // console.log(items.length, order.increment_id);
-            if (items.length > 0 && order.status !== "closed") {
+            if (items.length > 0) {
                 const buildShipment = {
                     increment_id: order.increment_id,
                     entity_id: order.entity_id,

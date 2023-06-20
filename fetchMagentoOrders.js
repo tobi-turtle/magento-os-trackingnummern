@@ -14,9 +14,9 @@ const urlDate = formatYmd(date); //"2023-06-06"; // formatYmd(date);
 
 export default async function () {
     const url = `${process.env.MAGENTO_SHOP_URL}/rest/default/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=created_at&searchCriteria[filter_groups][0][filters][0][value]=${urlDate}&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`;
-
+    const url2 = `${process.env.MAGENTO_SHOP_URL}/rest/default/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=created_at&searchCriteria[filter_groups][0][filters][0][condition_type]=gt&searchCriteria[filter_groups][0][filters][0][value]=${urlDate}&searchCriteria[filter_groups][1][filters][1][field]=status&searchCriteria[filter_groups][1][filters][1][condition_type]=neq&searchCriteria[filter_groups][1][filters][1][value]=complete&searchCriteria[filter_groups][2][filters][1][field]=status&searchCriteria[filter_groups][2][filters][1][condition_type]=neq&searchCriteria[filter_groups][2][filters][1][value]=closed`;
     try {
-        const response = await fetch(url, {
+        const response = await fetch(url2, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

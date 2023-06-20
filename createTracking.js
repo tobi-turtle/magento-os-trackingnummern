@@ -46,7 +46,7 @@ export default async function (shipments) {
                                     qty: Number(trackingQty), // aus Tracking
                                 },
                             ],
-                            notify: true,
+                            //notify: true,
                             tracks: [
                                 {
                                     track_number:
@@ -76,19 +76,19 @@ export default async function (shipments) {
 
                         await sendQtyToMagento(qtyObject);
 
-                        console.log(
+                        /*    console.log(
                             shipment.entity_id,
                             " ID ",
                             shipment.increment_id,
                             " ",
                             trackingObject
-                        );
+                        ); */
                         await sendTrackingToMagento(
                             shipment.entity_id,
                             trackingObject
                         );
 
-                        log.push(shipment.increment_id);
+                        log.push({ shipment, trackingObject });
                     }
                 }
             }

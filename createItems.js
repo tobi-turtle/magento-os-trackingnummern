@@ -8,13 +8,15 @@ export default function (items) {
             name: item.name,
             qty_shipped: item.qty_shipped,
             product_type: item.product_type,
+            parent_item: item.parent_item ? true : false,
         };
         if (
-            item.product_type === "configurable" &&
-            item.qty_ordered !== item.qty_shipped
+            item.qty_ordered !== item.qty_shipped &&
+            orderedItem.parent_item === false
         ) {
             orderedItems.push(orderedItem);
         }
     }
+
     return orderedItems;
 }
