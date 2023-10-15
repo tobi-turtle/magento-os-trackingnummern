@@ -1,3 +1,5 @@
 node_modules
-*.json
+shipments.json
+tracking.json
+orders.json
 .env
